@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Twitter Sentiment Analysis</title>
+</head>
+<body>
+    <h1>Twitter Sentiment Analysis</h1>
+    <form method="POST" action="{{ url_for('predict') }}">
+        <label for="query">Enter query:</label>
+        <input type="text" id="query" name="query"><br><br>
+        <label for="no_tweets">Number of tweets to analyze:</label>
+        <input type="number" id="no_tweets" name="no_tweets" min="1" max="100"><br><br>
+        <input type="submit" value="Analyze">
+    </form>
+</body>
+</html>
