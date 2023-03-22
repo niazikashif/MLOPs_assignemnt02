@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Results</title>
+</head>
+<body>
+    <h1>Results for "{{query}}"</h1>
+    <p>Number of tweets analyzed: {{no_tweets}}</p>
+    <p>Number of positive tweets: {{num_positive}}</p>
+    <p>Number of negative tweets: {{num_negative}}</p>
+    <p>Number of neutral tweets: {{num_neutral}}</p>
+    <h2>List of analyzed tweets:</h2>
+    <table>
+        <tr>
+            <th>Tweet</th>
+            <th>Sentiment</th>
+        </tr>
+        {% for index, row in table.iterrows() %}
+            <tr>
+                <td>{{ row['tweet'] }}</td>
+                <td>{{ row['sentiment'] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
